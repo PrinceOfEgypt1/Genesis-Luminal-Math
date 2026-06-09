@@ -149,3 +149,39 @@ export const TensFrameGsap: React.FC<TensFrameGsapProps> = ({ value, operation, 
             {Array(10).fill(0).map((_, j) => (
               <div key={j} style={{ width: '20px', height: '20px', margin: '2px', borderRadius: '50%', background: '#673AB7' }} />
             ))}
+          </div>
+        );
+      }
+
+      if (remainder > 0 || fullFrames === 0) {
+        frames.push(
+          <div key="partial" style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            width: '120px',
+            height: '60px',
+            border: '2px solid #673AB7',
+            borderRadius: '8px',
+            margin: '5px',
+            background: '#E8EAF6'
+          }}>
+            {Array(remainder).fill(0).map((_, j) => (
+              <div key={j} style={{ width: '20px', height: '20px', margin: '2px', borderRadius: '50%', background: '#673AB7' }} />
+            ))}
+            {Array(10 - remainder).fill(0).map((_, j) => (
+              <div key={`empty-${j}`} style={{ width: '20px', height: '20px', margin: '2px', borderRadius: '50%', background: 'transparent' }} />
+            ))}
+          </div>
+        );
+      }
+    }
+
+    return frames;
+  };
+
+  return (
+    <div ref={containerRef} style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      {renderFrames()}
+    </div>
+  );
+};
