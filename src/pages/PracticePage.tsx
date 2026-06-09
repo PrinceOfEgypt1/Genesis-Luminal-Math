@@ -6,6 +6,7 @@ import { StrategySelector } from '../components/StrategyCard';
 import { DifficultySelector } from '../components/DifficultySelector';
 import { ManualExerciseInput } from '../components/ManualExerciseInput';
 import { ExerciseDisplay } from '../components/ExerciseDisplay';
+import { StrategySelector } from '../components/StrategySelector';
 
 const correctSound = new Howl({ src: ['https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3'], volume: 0.5 });
 const wrongSound = new Howl({ src: ['https://assets.mixkit.co/sfx/preview/mixkit-losing-bleeps-2026.mp3'], volume: 0.5 });
